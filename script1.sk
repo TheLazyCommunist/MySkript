@@ -36,7 +36,7 @@ on rightclick:
 options:
     p: &8[&c욕설&8]
 on chat:
-	message contains "fuck" or "nigger" or "n-" or "f-" or "f you" or "f- you" or "nigger you" or "nig you"  or "mf you" or "m- you" or "mf" or "motherfucker" or "motherfuck" or "shit" or "s-" or "s- you" or "m-" or "m- you" or "니엄마" or "니에미" or "니애미" or "씨발" or "시발" or "ㅅㅂ" or "병신" or "ㅄ" or "ㅂㅅ"
+	message contains "fuck" or "nigger" or "n-" or "f-" or "f you" or "f- you" or "nigger you" or "nig you"  or "mf you" or "m- you" or "mf" or "motherfucker" or "motherfuck" or "shit" or "s-" or "s- you" or "m-" or "m- you" or "니엄마" or "니에미" or "니애미" or "씨발" or "시발" or "ㅅㅂ" or "병신" or "ㅄ" or "ㅂㅅ" or "시벌" or "Tlqkf" or "tlqkf" or "같네" or "니거" or "에미" or "애미" or "에비" or "애비"
 	kick player due to "{@p}: &8욕하지 마세요!"
 	broadcast "{@p}: %player% 님이 욕설 방지 기능에 의해 강퇴당하셨습니다."
 	cancel event
