@@ -40,3 +40,30 @@ on chat:
     ban player due to "{@p}: &8욕하지 마세요!" for 1 day
 	broadcast "{@p}: %player% 님이 욕설 방지 기능에 의해 1일 동안 추방당하셨습니다."
 	cancel event
+command /vanish:
+    trigger:
+        if player has op:
+            hide player from the server list
+            hide the player from all players
+            send "숨겨졌습니다."
+            play sound "entity.experience_orb.pickup" with volume 0.5 to the player
+        else:
+            send "<#FF0000>이 명령어를 쓸 권한이 없습니다!"
+            play sound "entity.enderman.teleport" with volume 1.5 and pitch 0.5
+            stop trigger
+command /unvanish:
+    trigger:
+        reveal player
+        reveal player from the server list
+command /nick <text>:
+    trigger:
+    if player has op:
+        set the player's display name to arg-1
+        set the player's tab list name to arg-1
+        set the player's name to arg-1
+        send "닉네임을 %arg-1%로 변경했습니다."
+        play sound "entity.experience_orb.pickup" with volume 0.5 to the player
+    else:
+        send "<#FF0000>이 명령어를 쓸 권한이 없습니다!"
+        play sound "entity.enderman.teleport" with volume 1.5 and pitch 0.5
+        stop trigger
