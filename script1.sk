@@ -67,3 +67,7 @@ command /nick <text>:
         send "<#FF0000>이 명령어를 쓸 권한이 없습니다!"
         play sound "entity.enderman.teleport" with volume 1.5 and pitch 0.5
         stop trigger
+on join:
+    if player has op:
+        set the player's display name to "<#FF0000>[관리자]%player's name%<reset>"
+        set the player's tab list name to "<#FF0000>[관리자]%player's name%<reset>"
