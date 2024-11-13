@@ -1,0 +1,42 @@
+command /food:
+    cooldown: 86400 seconds
+    trigger:
+        Give player 64 of bread
+        send "<yellow>빵 한 세트를 지급했습니다."
+        play sound "entity.experience_orb.pickup" with volume 0.5 to the player
+command /sethome:
+    trigger:
+        set {home::%player%} to location of player
+        send "집을 <grey>%location of player%<reset>로 저장했습니다."
+        play sound "entity.experience_orb.pickup" with volume 0.5 to the player
+command /delhome:
+    trigger:
+        delete {home::%player%}
+        send "저장된 집을 삭제했습니다."
+        play sound "entity.experience_orb.pickup" with volume 0.5 to the player
+command /home:
+    trigger:
+        if {home::%player%} is not set:
+            send "<#FF0000>집이 저장되어 있지 않습니다!<reset>"
+            play sound "entity.enderman.teleport" with volume 1.5 and pitch 0.5
+            stop trigger
+        else:
+            teleport player to {home::%player%}
+            send "저장된 집으로 이동했습니다."
+            play sound "entity.experience_orb.pickup" with volume 0.5 to the player
+command /shop:
+    trigger:
+        teleport player to location(-0.5, 110, 0.5, world "world", -90, 0)
+        send "<yellow>상점으로 이동했습니다."
+        play sound "entity.experience_orb.pickup" with volume 0.5 to the player
+on rightclick:
+    if player is holding a fire charge:
+        shoot a fireball from the player at speed 0.7
+        remove 1 fire charge from player's inventory
+options:
+    p: &8[&c욕설&8]
+on chat:
+	message contains "fuck" or "nigger" or "n-" or "f-" or "f you" or "f- you" or "nigger you" or "nig you"  or "mf you" or "m- you" or "mf" or "motherfucker" or "motherfuck" or "shit" or "s-" or "s- you" or "m-" or "m- you" or "니엄마" or "니에미" or "니애미" or "씨발" or "시발" or "ㅅㅂ" or "병신" or "ㅄ" or "ㅂㅅ"
+	kick player due to "{@p}: &8욕하지 마세요!"
+	broadcast "{@p}: %player% 님이 욕설 방지 기능에 의해 강퇴당하셨습니다."
+	cancel event
